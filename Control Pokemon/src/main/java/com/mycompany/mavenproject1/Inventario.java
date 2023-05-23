@@ -4,17 +4,30 @@
  */
 package com.mycompany.mavenproject1;
 import java.util.ArrayList;
+import Interfas.InterfazDeInteractuable;
+
 
 /**
  *
  * @author Sala-2-11-PC10
  */
 
-public class Inventario {
+public abstract class Inventario {
     private int capacidad;
-    Interactuables I = new Interactuables();
-    Inventario inv = new Inventario();
-    private ArrayList <Interactuables> interacciones = new ArrayList<>();
+    private ArrayList <InterfazDeInteractuable> interacciones = new ArrayList<>();
+    private ArrayList <Objeto> ObjetosDeEntrenador = new ArrayList<>();
+
+    public ArrayList<Objeto> getObjetosDeEntrenador() {
+        return ObjetosDeEntrenador;
+    }
+
+    public void setObjetosDeEntrenador(ArrayList<Objeto> ObjetosDeEntrenador) {
+        this.ObjetosDeEntrenador = ObjetosDeEntrenador;
+    }
+
+    public Inventario(int capacidad) {
+        this.capacidad = capacidad;
+    }
 
     public int getCapacidad() {
         return capacidad;
@@ -24,15 +37,15 @@ public class Inventario {
         this.capacidad = capacidad;
     }
 
-    public ArrayList<Interactuables> getInteracciones() {
+    public ArrayList<InterfazDeInteractuable> getInteracciones() {
         return interacciones;
     }
 
-    public void setInteracciones(ArrayList<Interactuables> interacciones) {
+    public void setInteracciones(ArrayList<InterfazDeInteractuable> interacciones) {
         this.interacciones = interacciones;
     }
 
-    public Inventario(int capacidad , ArrayList<Interactuables> interacciones) {
+    public Inventario(int capacidad , ArrayList<InterfazDeInteractuable> interacciones) {
         this.capacidad = capacidad;
         this.interacciones = interacciones;
     }
@@ -41,7 +54,10 @@ public class Inventario {
         
     }
     
-    public boolean crearInteractuables(int idObjeto,  String nombreObjeto){
+    public abstract void crearInventario();
+    
+    
+ /*   public boolean crearInteractuables(int idObjeto,  String nombreObjeto){
         int i = 0;
         for(i = 0  ; i < interacciones.size() ; i++){
             if(interacciones.get(i).getIdObjeto() == idObjeto){
@@ -99,7 +115,7 @@ public class Inventario {
         
         
     }
-
+*/
 
 
 }

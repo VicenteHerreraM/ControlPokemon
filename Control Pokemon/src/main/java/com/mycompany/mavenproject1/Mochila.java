@@ -4,29 +4,48 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.util.Scanner;
+import Interfas.InterfazDeInteractuable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Sala-2-11-PC10
  */
-public class Mochila extends Inventario {
+public class Mochila extends Inventario{
+    
+    private ArrayList<InterfazDeInteractuable> interacciones;
 
-    public Mochila(int capacidad, ArrayList<Interactuables> interacciones) {
-        super(capacidad, interacciones);
+    @Override
+    public ArrayList<InterfazDeInteractuable> getInteracciones() {
+        return interacciones;
     }
 
-    public Mochila() {
+    @Override
+    public void setInteracciones(ArrayList<InterfazDeInteractuable> interacciones) {
+        this.interacciones = interacciones;
+    }
+
+    public Mochila(ArrayList<InterfazDeInteractuable> interacciones) {
+        this.interacciones = interacciones;
     }
     
-    public boolean usarObjeto(int idObjeto){
-        int i;
-        for(i = 0 ; i < super.getCapacidad() ; i++){
-            if(super.getInteracciones().get(i).getIdObjeto() == idObjeto){
-                super.getInteracciones().remove(i);
-                return true;
-            }
+    public Mochila() {
+    }
+
+    @Override
+    public void crearInventario() {
+        Scanner input = new Scanner(System.in);
+        int idObjeto;
+        int cantObjetos = 10;
+        String nombreObjeto , tipoObjeto;
+        ArrayList<Objeto> objetosMochila = new ArrayList<Objeto>(cantObjetos);
+        for (Objeto objetosMochila1 : objetosMochila) {
+            idObjeto = input.nextInt();
+            nombreObjeto = input.nextLine();
+            tipoObjeto = input.nextLine();
+            objetosMochila.add(new Objeto(idObjeto , nombreObjeto , tipoObjeto));
         }
-        return false;
     }
 }
+

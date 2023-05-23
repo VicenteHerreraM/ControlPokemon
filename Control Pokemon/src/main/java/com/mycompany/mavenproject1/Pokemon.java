@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Estudiante
  */
-public class Pokemon extends Interactuables{
+public class Pokemon extends Objeto {
     private Tipo_Pokemon tipoPokemon;
     private ArrayList<Habilidad> ataques;
     private int vida;
@@ -23,15 +23,13 @@ public class Pokemon extends Interactuables{
         this.nivel = nivel;
     }
 
-    public Pokemon(Tipo_Pokemon tipoPokemon, ArrayList<Habilidad> ataques, int vida, int nivel, int IdObjeto, String NombreObjeto) {
-        super(IdObjeto, NombreObjeto);
+    public Pokemon(Tipo_Pokemon tipoPokemon, ArrayList<Habilidad> ataques, int vida, int nivel, int IdObjeto, String NombreObjeto , String tipoObjeto) {
+        super(IdObjeto, NombreObjeto , tipoObjeto);
         this.tipoPokemon = tipoPokemon;
         this.ataques = ataques;
         this.vida = vida;
         this.nivel = nivel;
     }
-
-
 
     public Pokemon() {
     }

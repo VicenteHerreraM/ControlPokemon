@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.mavenproject1;
+import Interfas.InterfazDeInteractuable;
 
 import java.util.ArrayList;
 
@@ -10,9 +11,9 @@ import java.util.ArrayList;
  *
  * @author Estudiante
  */
-public class Pokedex  extends Inventario{
+public class Pokedex  extends Inventario {
     
-    public Pokedex(int capacidad , ArrayList <Interactuables> interaccion) {
+    public Pokedex(int capacidad , ArrayList <InterfazDeInteractuable> interaccion) {
         super(capacidad, interaccion);
     }
 
@@ -22,9 +23,15 @@ public class Pokedex  extends Inventario{
     public boolean elegirPokemon(int idPokemon){
         int i = 0;
         for(i = 0 ; i < super.getInteracciones().size() ; i++){
-            if(super.getInteracciones().get(i).getIdObjeto() == idPokemon)return true;
+            if(super.getInteracciones().get(i).idObjeto()== idPokemon)return true;
         }
         return false;
     }
+
+    @Override
+    public void crearInventario() {
+    }
+
+
 
 }

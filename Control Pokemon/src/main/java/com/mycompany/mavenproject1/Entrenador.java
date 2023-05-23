@@ -5,7 +5,6 @@
 package com.mycompany.mavenproject1;
 
 import java.util.ArrayList;
-
 /**
  *
  * @author Estudiante
@@ -57,7 +56,7 @@ public class Entrenador {
     public void setPokemonesBatalla(ArrayList<Pokemon> pokemonesBatalla) {
         this.pokemonesBatalla = pokemonesBatalla;
     }
-    
-    
+
+
     
 }

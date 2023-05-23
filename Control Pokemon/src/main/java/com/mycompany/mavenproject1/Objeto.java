@@ -3,13 +3,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.mavenproject1;
-
+import Interfas.InterfazDeInteractuable;
 /**
  *
  * @author Sala-2-11-PC10
  */
-public class Objeto extends Interactuables {
+public class Objeto implements InterfazDeInteractuable{
+    private int IdObjeto;
+    private String NombreObjeto;
     private String tipoObjeto;
+
+    public Objeto(int IdObjeto, String NombreObjeto, String tipoObjeto) {
+        this.IdObjeto = IdObjeto;
+        this.NombreObjeto = NombreObjeto;
+        this.tipoObjeto = tipoObjeto;
+    }
+
+    public int getIdObjeto() {
+        return IdObjeto;
+    }
+
+    public void setIdObjeto(int IdObjeto) {
+        this.IdObjeto = IdObjeto;
+    }
+
+    public String getNombreObjeto() {
+        return NombreObjeto;
+    }
+
+    public void setNombreObjeto(String NombreObjeto) {
+        this.NombreObjeto = NombreObjeto;
+    }
 
     public String getTipoObjeto() {
         return tipoObjeto;
@@ -22,15 +46,19 @@ public class Objeto extends Interactuables {
     public Objeto(){
         
     }
-    
-    public Objeto(String tipoObjeto) {
-        this.tipoObjeto = tipoObjeto;
+
+    @Override
+    public int idObjeto() {
+        return getIdObjeto();
     }
 
-    public Objeto(String tipoObjeto, int IdObjeto, String NombreObjeto) {
-        super(IdObjeto, NombreObjeto);
-        this.tipoObjeto = tipoObjeto;
+    @Override
+    public int obtenerObjeto() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 
+    @Override
+    public boolean usarObjeto() {
+        return true;
+    }
 }
